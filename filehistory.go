@@ -4,13 +4,26 @@
 package main
 
 import (
-    "fmt"
-    _ "embed"
-    )
+	_ "embed"
+
+	"github.com/pwiecz/go-fltk"
+)
 
 //go:embed Version.dat
 var Version string
 
 func main() {
-    fmt.Printf("Hello filehistory v%s\n", Version)
+	const (
+		width      = 200
+		height     = 80
+		lineHeight = height / 2
+	)
+	fltk.SetScheme("oxy")
+	window := fltk.NewWindow(width, height)
+	window.SetLabel("File History " + Version[:len(Version)-1])
+	vbox := fltk.NewFlex(0, 0, width, height)
+
+	vbox.End()
+	window.Show()
+	fltk.Run()
 }

@@ -1,2 +1,2 @@
-go build -o filehistory .
-strip filehistory
+go build -o FileHistory .
+strip FileHistory

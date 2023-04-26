@@ -1,2 +1,3 @@
 ./build.sh
-yes|mv filehistory ~/opt/bin
+yes|mv FileHistory ~/opt/bin
+yes|cp FileHistory.exe ~/commercial/tmp/winbin
